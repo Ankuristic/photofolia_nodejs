@@ -17,6 +17,9 @@ app.use(express.json());
 
 // define a route for thee url
 
+app.use('/albums',albumRoutes)
+console.log(albumRoutes)
+
 
 
 
@@ -24,7 +27,7 @@ app.use(express.json());
 coonectDB().then(()=>{
 
     // Use the album routes
-    app.use('/albums', albumRoutes);
+    // app.use('/albums', albumRoutes);
 app.listen(port, () => {
     console.log(`Server is listening at 7000`);
 });

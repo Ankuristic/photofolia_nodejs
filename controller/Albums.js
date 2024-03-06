@@ -9,10 +9,14 @@ const createAlbum =async (req,res) => {
         console.log('Album Model:', Album);
         const {name, image} =req.body;
         // create a new album instance
+        console.log("req.body", req.body)
 
         const newAlbum = new Album({
             name,
-            image
+            image: {
+                data: Buffer.from(/* binary image data */),
+                contentType: 'image/jpeg', // Replace with the actual MIME type
+            },
         });
         await newAlbum.save();
         console.log('Album Model:', Album);
